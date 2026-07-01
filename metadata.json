@@ -1,0 +1,6 @@
+{
+  "name": "Notsopedia",
+  "description": "An interactive RDBMS and database revision system featuring study notes, code simulators, mock exam graders, and custom study materials uploaded by students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

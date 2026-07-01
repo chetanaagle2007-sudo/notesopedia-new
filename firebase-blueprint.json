@@ -1,0 +1,83 @@
+{
+  "entities": {
+    "Note": {
+      "title": "Study Note",
+      "description": "An academic study note uploaded by a student or educator",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the study note"
+        },
+        "content": {
+          "type": "string",
+          "description": "Full markdown-formatted academic content of the note"
+        },
+        "subjectName": {
+          "type": "string",
+          "description": "Name of the academic subject"
+        },
+        "subjectCode": {
+          "type": "string",
+          "description": "Syllabus subject code"
+        },
+        "topicName": {
+          "type": "string",
+          "description": "Syllabus topic/chapter name"
+        },
+        "uploaderName": {
+          "type": "string",
+          "description": "Full name of the uploader"
+        },
+        "uploaderRole": {
+          "type": "string",
+          "description": "Uploader role (Student, Representative, Professor, Lead TA)"
+        },
+        "uploaderEmail": {
+          "type": "string",
+          "description": "Email contact of the uploader"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of when the note was uploaded"
+        },
+        "likes": {
+          "type": "integer",
+          "description": "Number of likes the note has received"
+        }
+      },
+      "required": ["title", "content", "subjectName", "uploaderName", "uploadedAt", "likes"]
+    },
+    "SystemConfig": {
+      "title": "System Configuration",
+      "description": "Global administration parameters and broadcast news banner configuration",
+      "type": "object",
+      "properties": {
+        "announcement": {
+          "type": "string",
+          "description": "Broadcast marquee text"
+        },
+        "announcementActive": {
+          "type": "boolean",
+          "description": "Whether the marquee is actively displayed"
+        },
+        "enableSubmissions": {
+          "type": "boolean",
+          "description": "Whether users are permitted to upload new notes"
+        }
+      },
+      "required": ["announcement", "announcementActive", "enableSubmissions"]
+    }
+  },
+  "firestore": {
+    "/notes/{noteId}": {
+      "schema": "Note",
+      "description": "Collection of all community-sourced study notes"
+    },
+    "/system_config/{configId}": {
+      "schema": "SystemConfig",
+      "description": "Single-document collection containing global administrator configuration"
+    }
+  }
+}

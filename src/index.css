@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #FAF9F6; /* Warm academic off-white, Wikipedia style */
+    --ink: #0F172A; /* Beautiful slate slate-900 instead of solid ink */
+    --line: #E2E8F0; /* Soft elegant line dividing spaces cleanly */
+    --f-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    --f-sans: "Inter", system-ui, sans-serif;
+    --f-serif: "Playfair Display", Georgia, serif;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-sans);
+    min-height: 100vh;
+    margin: 0;
+  }
+}
+
+/* Custom styles for high-contrast professional borders */
+.tech-border {
+  border: 1px solid var(--ink);
+}
+
+.tech-border-b {
+  border-bottom: 1px solid var(--ink);
+}
+
+.tech-border-r {
+  border-right: 1px solid var(--ink);
+}
+
+.tech-border-l {
+  border-left: 1px solid var(--ink);
+}
+
+.tech-border-t {
+  border-top: 1px solid var(--ink);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
